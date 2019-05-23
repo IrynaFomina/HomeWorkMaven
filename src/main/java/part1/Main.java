@@ -1,8 +1,12 @@
+package part1;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /*- считать файл в Map c помощью Jackson
 
@@ -34,5 +38,18 @@ public class Main {
         }
 
         System.out.println("Sum: " + sum);
+// - с помощью collections stream преобразовать в новую Map, где все значения умножены на sum
+        final double sum2 = sum;
+
+        Map<String, Double> doubleResult2 =  new HashMap<>();
+        doubleResult.entrySet().stream().forEach(v -> doubleResult2.put(v.getKey(),v.getValue()*sum2));
+
+        doubleResult2.entrySet().forEach(v-> System.out.println(v));
+
+//        с помощью collections stream посчитать количество уникальных значений в мапе
+
+        Set<Double> uniqueValues = new HashSet<>();
+        System.out.println("Unique value number " + doubleResult.entrySet().stream().map(v -> uniqueValues.add(v.getValue())).toArray().length);
+
     }
 }
