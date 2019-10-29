@@ -8,7 +8,7 @@
     <artifactId>HomeWorkMaven</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <jackson.version>2.9.8</jackson.version>
+        <jackson.version>2.10.0</jackson.version>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
